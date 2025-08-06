@@ -29,7 +29,7 @@ const EmployeeTable = () => {
 const handleNext = () => {
   setCurrentPage((prev) => Math.min(prev + 1, totalPages));
 };
-
+    
   return (
     <>
       <table className={styles.table}>

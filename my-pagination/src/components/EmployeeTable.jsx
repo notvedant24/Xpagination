@@ -23,12 +23,12 @@ const EmployeeTable = () => {
   const currentData = employees.slice(startIndex, startIndex + rowsPerPage);
 
   const handlePrevious = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
+  setCurrentPage((prev) => Math.max(prev - 1, 1));
+};
 
-  const handleNext = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
+const handleNext = () => {
+  setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+};
 
   return (
     <>

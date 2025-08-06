@@ -29,7 +29,7 @@ const EmployeeTable = () => {
 const handleNext = () => {
   setCurrentPage((prev) => Math.min(prev + 1, totalPages));
 };
-    
+
   return (
     <>
       <table className={styles.table}>
@@ -53,23 +53,26 @@ const handleNext = () => {
         </tbody>
       </table>
 
-      <div className={styles.pagination}>
-        <button
-          className={styles.button}
-          onClick={handlePrevious}
-          disabled={currentPage === 1}
-        >
-          Previous
-        </button>
-        <span className={styles.pageNumber}>{currentPage}</span>
-        <button
-          className={styles.button}
-          onClick={handleNext}
-          disabled={currentPage === totalPages}
-        >
-          Next
-        </button>
-      </div>
+     <div className={styles.pagination}>
+  <button
+    className={styles.button}
+    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+    disabled={currentPage === 1}
+  >
+    Previous
+  </button>
+  <span className={styles.pageNumber} data-testid="page-number">
+    {currentPage}
+  </span>
+  <button
+    className={styles.button}
+    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+    disabled={currentPage === totalPages}
+  >
+    Next
+  </button>
+</div>
+
     </>
   );
 };

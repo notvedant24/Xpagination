@@ -53,7 +53,7 @@ const handleNext = () => {
         </tbody>
       </table>
 
-     <div className={styles.pagination}>
+    <div className={styles.pagination}>
   <button
     className={styles.button}
     onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -61,9 +61,9 @@ const handleNext = () => {
   >
     Previous
   </button>
-  <span className={styles.pageNumber} data-testid="page-number">
-    {currentPage}
-  </span>
+
+  <p className={styles.pageNumber}>{currentPage}</p>
+
   <button
     className={styles.button}
     onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
@@ -72,6 +72,7 @@ const handleNext = () => {
     Next
   </button>
 </div>
+
 
     </>
   );

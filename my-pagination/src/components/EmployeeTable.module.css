@@ -1,0 +1,59 @@
+.table {
+  width: 96%;
+  margin: 40px auto 0;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.thead {
+  background-color: #009879;
+  color: white;
+}
+
+.thead th {
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tbody td {
+  padding: 14px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.pagination {
+  margin: 24px auto 40px;
+  text-align: center;
+}
+
+.button,
+.pageNumber {
+  background-color: #009879;
+  color: white;
+  border: none;
+  margin: 0 6px;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: 60px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.button:disabled {
+  background-color: #b2dfdb;
+  cursor: not-allowed;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 30px;
+  color: #222;
+}

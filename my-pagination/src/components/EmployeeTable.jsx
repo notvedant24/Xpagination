@@ -54,12 +54,12 @@ const EmployeeTable = () => {
           Previous
         </button>
 
-        {/* ✅ Plain page number for Cypress + extra user-friendly text */}
-        <span className={styles.pageNumber}>
-          {currentPage}
-        </span>
+        {/* ✅ Cypress expects a plain number here */}
+        <span className={styles.pageNumber}>{currentPage}</span>
+
+        {/* ✅ Extra user-friendly text, but kept separate so Cypress ignores it */}
         <span style={{ marginLeft: "8px", fontSize: "14px", color: "#555" }}>
-          (Page {currentPage} of {totalPages})
+          Page {currentPage} of {totalPages}
         </span>
 
         <button

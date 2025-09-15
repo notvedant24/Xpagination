@@ -4,7 +4,6 @@ import styles from './EmployeeTable.module.css';
 const EmployeeTable = () => {
   const [employees, setEmployees] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [displayPage, setDisplayPage] = useState(1);
   const rowsPerPage = 10;
 
   useEffect(() => {
@@ -18,12 +17,6 @@ const EmployeeTable = () => {
       .then((data) => setEmployees(data))
       .catch(() => alert('failed to fetch data'));
   }, []);
-
-  useEffect(() => {
-    // Safe delay to ensure DOM update visibility for Cypress
-    const timeout = setTimeout(() => setDisplayPage(currentPage), 10);
-    return () => clearTimeout(timeout);
-  }, [currentPage]);
 
   const totalPages = Math.ceil(employees.length / rowsPerPage);
   const startIndex = (currentPage - 1) * rowsPerPage;
@@ -61,7 +54,8 @@ const EmployeeTable = () => {
           Previous
         </button>
 
-        <p className={styles.pageNumber}>{displayPage}</p>
+        {/* ✅ Changed from <p> to <span> and removed displayPage */}
+        <span className={styles.pageNumber}>{currentPage}</span>
 
         <button
           className={styles.button}

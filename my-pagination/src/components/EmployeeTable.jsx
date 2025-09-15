@@ -54,12 +54,19 @@ const EmployeeTable = () => {
           Previous
         </button>
 
-        {/* ✅ Changed from <p> to <span> and removed displayPage */}
-        <span className={styles.pageNumber}>{currentPage}</span>
+        {/* ✅ Plain page number for Cypress + extra user-friendly text */}
+        <span className={styles.pageNumber}>
+          {currentPage}
+        </span>
+        <span style={{ marginLeft: "8px", fontSize: "14px", color: "#555" }}>
+          (Page {currentPage} of {totalPages})
+        </span>
 
         <button
           className={styles.button}
-          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          onClick={() =>
+            setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+          }
           disabled={currentPage === totalPages}
         >
           Next
